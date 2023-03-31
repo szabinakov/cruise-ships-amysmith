@@ -1,4 +1,13 @@
 {
+  "name": "cruise-ships",
+  "version": "5.0.0",
+  "description": "more testing exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --bail"
+  },
+  "author": "Manchester Codes",
+  "license": "ISC",
   "devDependencies": {
     "jest": "^29.5.0"
   }
