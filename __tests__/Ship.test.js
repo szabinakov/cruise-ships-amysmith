@@ -28,6 +28,7 @@ describe('Ship', () => {
         ship.setSail();
 
         expect(ship.currentPort).toBeFalsy();
+        expect(portsmouth.dockedShips).not.toContain(ship);
     });
 
     it('can dock at different port', () => {
@@ -40,6 +41,7 @@ describe('Ship', () => {
         ship.dock();
 
         expect(ship.currentPort).toBe(ilfracombe);
+        expect(ilfracombe.dockedShips).toContain(ship);
     });
 
     it('cannot sail further than its itinerary', () => {
@@ -52,5 +54,13 @@ describe('Ship', () => {
         ship.dock();
       
         expect(() => ship.setSail()).toThrowError('-- End of itinerary --');
+      });
+
+      it('gets added to port on instantiation', () => {
+        const portsmouth = new Port('Portsmouth');
+        const itinerary = new Itinerary([portsmouth]);
+        const ship = new Ship(itinerary);
+      
+        expect(portsmouth.dockedShips).toContain(ship);
       });
 });
