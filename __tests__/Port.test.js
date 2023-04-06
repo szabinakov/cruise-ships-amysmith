@@ -3,27 +3,23 @@ const Ship = require('../src/Ship.js');
 
 
 describe('Port', () => {
+    describe('with ports and ship', () => {
+        const port = new Port('Portsmouth');
+    
     it('can be instantiated', () => {
         expect(new Port()).toBeInstanceOf(Object);
     });
     
     it('has a port name', () => {
-       const port = new Port('Portsmouth');
-
        expect(port.name).toBe('Portsmouth');
     });
 
     it('add ship that dock in port', () => {
-        const port = new Port('Portsmouth');
-        //const ship = {};
-        const cuttysark = {};
-        const endeavour = {};
-        port.addShip(cuttysark);
-        port.addShip(endeavour);
+        const ship = {};
 
-        //port.addShip(ship);
+        port.addShip(ship);
  
-        expect(port.dockedShips).toContain(cuttysark);
+        expect(port.dockedShips).toContain(ship);
      });
 
     it('remove ship that leaves port', () => {
@@ -37,5 +33,5 @@ describe('Port', () => {
  
         expect(port.dockedShips).toEqual([endeavour]);
      });
-
+    });
 });
