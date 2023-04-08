@@ -15,7 +15,7 @@ describe('Port', () => {
     });
 
     it('add ship that dock in port', () => {
-        const ship = {};
+        const ship = jest.fn();
 
         port.addShip(ship);
  
@@ -24,8 +24,8 @@ describe('Port', () => {
 
     it('remove ship that leaves port', () => {
         const port = new Port('Portsmouth');
-        const cuttysark = {};
-        const endeavour = {};
+        const cuttysark = jest.fn();
+        const endeavour = jest.fn();
         port.addShip(cuttysark);
         port.addShip(endeavour);
 

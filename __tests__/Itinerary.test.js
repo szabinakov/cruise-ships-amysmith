@@ -7,8 +7,8 @@ describe('Itinerary', () => {
     });
 
     it('has ports', () => {
-        const portsmouth = new Port('Portsmouth');
-        const ilfracombe = new Port('Ilfracombe');
+        const portsmouth = jest.fn();
+        const ilfracombe = jest.fn();
         
         const itinerary = new Itinerary([portsmouth, ilfracombe]);
  
